@@ -19,6 +19,13 @@ dependencies = [
     "scikit-learn (>=1.7.1,<2.0.0)",
     "torchinfo (>=1.8.0,<2.0.0)"
 ]
+
+packages = [
+  { include = "compositeimage", from = "src" }
+]
+
+
+
 [[tool.poetry.source]]
 name     = "pytorch-cu121"
 url      = "https://download.pytorch.org/whl/cu121"
