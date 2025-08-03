@@ -14,5 +14,5 @@ model = getmodel(
 
 os.makedirs("models", exist_ok=True)
 save_path = os.path.join("models", f"{cfg.model.name}.pt")
-torch.save(model.state_dict(), save_path)
+torch.save(model, save_path)
 print(f"Model weights saved to {save_path}")

@@ -1,0 +1,7 @@
+model:
+  name: "resnet18"
+  pretrained: false
+  num_classes: 8
+
+train:
+  retrain: false
