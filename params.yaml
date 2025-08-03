@@ -1,7 +1,11 @@
 model:
   name: "resnet18"
-  pretrained: false
+  pretrained: true
   num_classes: 8
+  unfreeze_modules: ["fc"]
 
 train:
-  retrain: false
+  init_model_path: models/resnet18.pt
+  epochs: 10
+  batch_size: 32
+  lr: 0.001
