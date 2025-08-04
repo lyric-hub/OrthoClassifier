@@ -4,8 +4,19 @@ model:
   num_classes: 8
   unfreeze_modules: ["fc"]
 
+data:
+  data_dir: "data/composite_images"
+
 train:
   init_model_path: models/resnet18.pt
   epochs: 10
   batch_size: 32
   lr: 0.001
+  patience: 10
+
+save:
+  path: "models/resnet18.pt"
+  format: "pt"
+
+dvclive: 
+  dir: "dvclive/resnet18"

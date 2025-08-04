@@ -1,6 +1,6 @@
 from .config import load_config
 from .model import getmodel
-from .Classifier import Trainer
+from .Classifier import Classifier
 
-__all__ = ["load_config", "getmodel", "Trainer"]
+__all__ = ["load_config", "getmodel", "Classifier"]
 
