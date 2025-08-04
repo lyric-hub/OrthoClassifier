@@ -9,7 +9,7 @@ from sklearn.metrics import accuracy_score
 from dvclive import Live
 from compositeimage import load_config
 
-class Trainer:
+class Classifier:
     def __init__(self, live_dir: str = None):
         self.cfg = load_config() 
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -55,6 +55,10 @@ class Trainer:
         self.val_loader = DataLoader(
             datasets.ImageFolder(os.path.join(data_root, "val"), tf),
             batch_size=cfg.batch_size
+        )
+        self.test_loader = DataLoader(
+            datasets.ImageFolder(os.path.join(data_root, "test"), tf),
+            batch_size=cfg.batch_size, shuffle=False
         )
 
     def fit(self, epochs: int = None, save_path: str = None):
