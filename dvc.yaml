@@ -2,23 +2,30 @@ stages:
   train:
     cmd: python train.py
     deps:
-      - src/train.py
-      - params.yaml
+    - train.py
+    - params.yaml
+    - data/Omini_DATA
+    - models/resnet18.pt
     outs:
-      - models/resnet18.pt
+    - models/resnet18V1.pt
     metrics:
-      - dvclive/resnet18/metrics.json:
-          cache: false
+    - dvclive/resnet18/metrics.json:
+        cache: false
     plots:
-      - dvclive/resnet18/plots/metrics/train_loss.tsv:
-          title: "Train Loss vs Epoch"
-          x: "epoch"
-          y: "train_loss"
-      - dvclive/resnet18/plots/metrics/val_loss.tsv:
-          title: "Val Loss vs Epoch"
-          x: "epoch"
-          y: "val_loss"
-      - dvclive/resnet18/plots/metrics/val_accuracy.tsv:
-          title: "Val Accuracy vs Epoch"
-          x: "epoch"
-          y: "val_accuracy"
+    - dvclive/resnet18/plots/metrics/train_loss.tsv:
+        title: Train Loss vs Epoch
+        x: epoch
+        y: train_loss
+    - dvclive/resnet18/plots/metrics/val_loss.tsv:
+        title: Val Loss vs Epoch
+        x: epoch
+        y: val_loss
+    - dvclive/resnet18/plots/metrics/val_accuracy.tsv:
+        title: Val Accuracy vs Epoch
+        x: epoch
+        y: val_accuracy
+metrics:
+- dvclive/resnet18/metrics.json
+plots:
+- dvclive/resnet18/plots/metrics:
+    x: step
