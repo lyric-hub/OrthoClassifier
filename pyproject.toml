@@ -3,7 +3,7 @@ name = "compositeimage"
 version = "0.1.0"
 description = "The project aims to develop a cnn classifier using pretrained ResNet as backbone. The main aim is to classify the images and make a composite image."
 authors = [
-    {name = "Cyril Saju and Sandra Jarvas"}
+    {name = "Cyril Saju", email = "csaju53@gmail.com"}, {name = "Sandra Jervas", email = "sandrajervas206@gmail.com"}
 ]
 license = {text = "None"}
 readme = "README.md"
