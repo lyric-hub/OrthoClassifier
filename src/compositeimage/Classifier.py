@@ -18,7 +18,7 @@ class Classifier:
     def __init__(self):
         self.cfg    = load_config()
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        self.live   = Live(self.cfg.dvclive.dir or "dvclive/resnet18")
+        self.live   = Live(self.cfg.dvclive.dir or "dvclive/resnet18", dvcyaml=True)
         self._build_model()
         self._build_loaders()
         self.criterion = nn.CrossEntropyLoss()

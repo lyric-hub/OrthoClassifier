@@ -13,13 +13,13 @@ data:
 
 train:
   init_model_path: 'models/resnet18.pt'
-  epochs: 5
+  epochs: 15
   batch_size: 32
   lr: 0.001
   patience: 3
 
 save:
-  path: "models/resnet18V1.pt"
+  path: "models/fine_tuned_resnet18.pt"
   format: "pt"
 
 dvclive: 
