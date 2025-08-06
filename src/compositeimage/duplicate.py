@@ -3,12 +3,14 @@ import torch
 import imagehash
 from PIL import Image
 from collections import defaultdict
-from torchvision import transforms, models
+from torchvision import transforms
+from compositeimage import load_config
 
 class DuplicatePredictor:
-    def __init__(self, model_path, num_classes=7):
+    def __init__(self):
+        self.cfg=load_config()
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        self.model = self._load_model(model_path, num_classes)
+        self.model = self._load_models()
         self.transform = transforms.Compose([
             transforms.Resize((224, 224)),
             transforms.ToTensor(),
@@ -23,10 +25,8 @@ class DuplicatePredictor:
             6: 'upper_jaw',
         }
 
-    def _load_model(self, model_path, num_classes):
-        model = models.resnet18(pretrained=False)
-        model.fc = torch.nn.Linear(model.fc.in_features, num_classes)
-        model.load_state_dict(torch.load(model_path, map_location=self.device))
+    def _load_model(self):
+        model = torch.load(self.cfg.path, map_location='cpu')
         model.to(self.device)
         model.eval()
         return model
@@ -41,12 +41,6 @@ class DuplicatePredictor:
         return pred.item(), confidence.item()
 
     def remove_duplicates(self, images_with_preds):
-        """
-        Args:
-            images_with_preds: List of tuples (img_path, label_name, confidence)
-        Returns:
-            List of unique images after removing duplicates based on perceptual hash.
-        """
         hash_dict = defaultdict(list)
         for img_path, pred_label, prob in images_with_preds:
             img = Image.open(img_path).resize((128, 128)).convert('L')
@@ -64,4 +58,16 @@ class DuplicatePredictor:
             duplicates.sort(key=lambda x: -x[2])  # highest confidence first
             unique.append(duplicates[0])
         return unique
+    
+    def UniqueImages(self, img_dir):
+        image_dir = image_dir
+        predictions = []
+
+        for img_name in os.listdir(image_dir):
+            img_path = os.path.join(image_dir, img_name)
+            pred_idx, conf = self.predict_image(img_path)
+            label = self.label_map[pred_idx]
+            predictions.append((img_path, label, conf))
+
+        unique_images = self.remove_duplicates(predictions)
 
