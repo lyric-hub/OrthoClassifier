@@ -17,57 +17,25 @@
 </head>
 <body>
     
-    <div id = "dvclive_resnet18_plots_metrics__gitignore">
-        <script type = "text/javascript">
-            var spec = {};
-            vegaEmbed('#dvclive_resnet18_plots_metrics__gitignore', spec);
-        </script>
-    </div>
-    
-
-    <div id = "dvc_yaml__dvclive_resnet18_plots_metrics_train_loss_tsv">
-        <script type = "text/javascript">
-            var spec = {};
-            vegaEmbed('#dvc_yaml__dvclive_resnet18_plots_metrics_train_loss_tsv', spec);
-        </script>
-    </div>
-    
-
     <div id = "dvclive_resnet18_plots_metrics_train_loss_tsv">
         <script type = "text/javascript">
-            var spec = {};
+            var spec = {"$schema": "https://vega.github.io/schema/vega-lite/v5.json", "data": {"values": [{"step": "0", "train_loss": "1.3704950275359216", "rev": "workspace"}, {"step": "1", "train_loss": "0.9009721805522968", "rev": "workspace"}, {"step": "2", "train_loss": "0.7050576480952176", "rev": "workspace"}, {"step": "3", "train_loss": "0.5997280401068849", "rev": "workspace"}, {"step": "4", "train_loss": "0.5320383515450862", "rev": "workspace"}, {"step": "5", "train_loss": "0.4896629623004368", "rev": "workspace"}, {"step": "6", "train_loss": "0.45242571792045194", "rev": "workspace"}, {"step": "7", "train_loss": "0.4176736454685013", "rev": "workspace"}, {"step": "8", "train_loss": "0.39574321988341093", "rev": "workspace"}, {"step": "9", "train_loss": "0.38717575119687364", "rev": "workspace"}, {"step": "10", "train_loss": "0.3586784723130139", "rev": "workspace"}, {"step": "11", "train_loss": "0.34746782675191956", "rev": "workspace"}, {"step": "12", "train_loss": "0.33236167512156745", "rev": "workspace"}, {"step": "13", "train_loss": "0.32444518107872505", "rev": "workspace"}, {"step": "14", "train_loss": "0.3134741045824893", "rev": "workspace"}]}, "title": {"text": "dvclive/resnet18/plots/metrics/train_loss.tsv", "anchor": "middle"}, "width": 300, "height": 300, "params": [{"name": "smooth", "value": 0.001, "bind": {"input": "range", "min": 0.001, "max": 1, "step": 0.001}}], "encoding": {"x": {"field": "step", "type": "quantitative", "title": "step"}, "color": {"field": "rev", "scale": {"domain": ["workspace"], "range": ["#945dd6"]}}, "strokeDash": {}}, "layer": [{"layer": [{"params": [{"name": "grid", "select": "interval", "bind": "scales"}], "mark": "line"}, {"transform": [{"filter": {"param": "hover", "empty": false}}], "mark": "point"}], "encoding": {"y": {"field": "train_loss", "type": "quantitative", "title": "train_loss", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}}, "transform": [{"loess": "train_loss", "on": "step", "groupby": ["rev"], "bandwidth": {"signal": "smooth"}}]}, {"mark": {"type": "line", "opacity": 0.2}, "encoding": {"x": {"field": "step", "type": "quantitative", "title": "step"}, "y": {"field": "train_loss", "type": "quantitative", "title": "train_loss", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}}}, {"mark": {"type": "circle", "size": 10}, "encoding": {"x": {"aggregate": "max", "field": "step", "type": "quantitative", "title": "step"}, "y": {"aggregate": {"argmax": "step"}, "field": "train_loss", "type": "quantitative", "title": "train_loss", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}}}, {"transform": [{"calculate": "datum.rev", "as": "pivot_field"}, {"pivot": "pivot_field", "op": "mean", "value": "train_loss", "groupby": ["step"]}], "mark": {"type": "rule", "tooltip": {"content": "data"}, "stroke": "grey"}, "encoding": {"opacity": {"condition": {"value": 0.3, "param": "hover", "empty": false}, "value": 0}}, "params": [{"name": "hover", "select": {"type": "point", "fields": ["step"], "nearest": true, "on": "mouseover", "clear": "mouseout"}}]}]};
             vegaEmbed('#dvclive_resnet18_plots_metrics_train_loss_tsv', spec);
-        </script>
-    </div>
-    
-
-    <div id = "dvc_yaml__dvclive_resnet18_plots_metrics_val_accuracy_tsv">
-        <script type = "text/javascript">
-            var spec = {};
-            vegaEmbed('#dvc_yaml__dvclive_resnet18_plots_metrics_val_accuracy_tsv', spec);
         </script>
     </div>
     
 
     <div id = "dvclive_resnet18_plots_metrics_val_accuracy_tsv">
         <script type = "text/javascript">
-            var spec = {};
+            var spec = {"$schema": "https://vega.github.io/schema/vega-lite/v5.json", "data": {"values": [{"step": "0", "val_accuracy": "0.7812128418549346", "rev": "workspace"}, {"step": "1", "val_accuracy": "0.8228299643281808", "rev": "workspace"}, {"step": "2", "val_accuracy": "0.8418549346016647", "rev": "workspace"}, {"step": "3", "val_accuracy": "0.8442330558858502", "rev": "workspace"}, {"step": "4", "val_accuracy": "0.8406658739595719", "rev": "workspace"}, {"step": "5", "val_accuracy": "0.8442330558858502", "rev": "workspace"}, {"step": "6", "val_accuracy": "0.8763376932223543", "rev": "workspace"}, {"step": "7", "val_accuracy": "0.8787158145065398", "rev": "workspace"}, {"step": "8", "val_accuracy": "0.8751486325802615", "rev": "workspace"}, {"step": "9", "val_accuracy": "0.8810939357907254", "rev": "workspace"}, {"step": "10", "val_accuracy": "0.8715814506539834", "rev": "workspace"}, {"step": "11", "val_accuracy": "0.882282996432818", "rev": "workspace"}, {"step": "12", "val_accuracy": "0.8953626634958383", "rev": "workspace"}, {"step": "13", "val_accuracy": "0.8906064209274673", "rev": "workspace"}, {"step": "14", "val_accuracy": "0.8953626634958383", "rev": "workspace"}]}, "title": {"text": "dvclive/resnet18/plots/metrics/val_accuracy.tsv", "anchor": "middle"}, "width": 300, "height": 300, "params": [{"name": "smooth", "value": 0.001, "bind": {"input": "range", "min": 0.001, "max": 1, "step": 0.001}}], "encoding": {"x": {"field": "step", "type": "quantitative", "title": "step"}, "color": {"field": "rev", "scale": {"domain": ["workspace"], "range": ["#945dd6"]}}, "strokeDash": {}}, "layer": [{"layer": [{"params": [{"name": "grid", "select": "interval", "bind": "scales"}], "mark": "line"}, {"transform": [{"filter": {"param": "hover", "empty": false}}], "mark": "point"}], "encoding": {"y": {"field": "val_accuracy", "type": "quantitative", "title": "val_accuracy", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}}, "transform": [{"loess": "val_accuracy", "on": "step", "groupby": ["rev"], "bandwidth": {"signal": "smooth"}}]}, {"mark": {"type": "line", "opacity": 0.2}, "encoding": {"x": {"field": "step", "type": "quantitative", "title": "step"}, "y": {"field": "val_accuracy", "type": "quantitative", "title": "val_accuracy", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}}}, {"mark": {"type": "circle", "size": 10}, "encoding": {"x": {"aggregate": "max", "field": "step", "type": "quantitative", "title": "step"}, "y": {"aggregate": {"argmax": "step"}, "field": "val_accuracy", "type": "quantitative", "title": "val_accuracy", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}}}, {"transform": [{"calculate": "datum.rev", "as": "pivot_field"}, {"pivot": "pivot_field", "op": "mean", "value": "val_accuracy", "groupby": ["step"]}], "mark": {"type": "rule", "tooltip": {"content": "data"}, "stroke": "grey"}, "encoding": {"opacity": {"condition": {"value": 0.3, "param": "hover", "empty": false}, "value": 0}}, "params": [{"name": "hover", "select": {"type": "point", "fields": ["step"], "nearest": true, "on": "mouseover", "clear": "mouseout"}}]}]};
             vegaEmbed('#dvclive_resnet18_plots_metrics_val_accuracy_tsv', spec);
-        </script>
-    </div>
-    
-
-    <div id = "dvc_yaml__dvclive_resnet18_plots_metrics_val_loss_tsv">
-        <script type = "text/javascript">
-            var spec = {};
-            vegaEmbed('#dvc_yaml__dvclive_resnet18_plots_metrics_val_loss_tsv', spec);
         </script>
     </div>
     
 
     <div id = "dvclive_resnet18_plots_metrics_val_loss_tsv">
         <script type = "text/javascript">
-            var spec = {};
+            var spec = {"$schema": "https://vega.github.io/schema/vega-lite/v5.json", "data": {"values": [{"step": "0", "val_loss": "1.0359763348544087", "rev": "workspace"}, {"step": "1", "val_loss": "0.7736465522536525", "rev": "workspace"}, {"step": "2", "val_loss": "0.6494600463796545", "rev": "workspace"}, {"step": "3", "val_loss": "0.5686038511770742", "rev": "workspace"}, {"step": "4", "val_loss": "0.5218869734693456", "rev": "workspace"}, {"step": "5", "val_loss": "0.48386358828456316", "rev": "workspace"}, {"step": "6", "val_loss": "0.46090925291732504", "rev": "workspace"}, {"step": "7", "val_loss": "0.43602433110828753", "rev": "workspace"}, {"step": "8", "val_loss": "0.4167781232131852", "rev": "workspace"}, {"step": "9", "val_loss": "0.4034467731361036", "rev": "workspace"}, {"step": "10", "val_loss": "0.3934019000993835", "rev": "workspace"}, {"step": "11", "val_loss": "0.38385730347147695", "rev": "workspace"}, {"step": "12", "val_loss": "0.37374572345504053", "rev": "workspace"}, {"step": "13", "val_loss": "0.3635862538660014", "rev": "workspace"}, {"step": "14", "val_loss": "0.35325518236668024", "rev": "workspace"}]}, "title": {"text": "dvclive/resnet18/plots/metrics/val_loss.tsv", "anchor": "middle"}, "width": 300, "height": 300, "params": [{"name": "smooth", "value": 0.001, "bind": {"input": "range", "min": 0.001, "max": 1, "step": 0.001}}], "encoding": {"x": {"field": "step", "type": "quantitative", "title": "step"}, "color": {"field": "rev", "scale": {"domain": ["workspace"], "range": ["#945dd6"]}}, "strokeDash": {}}, "layer": [{"layer": [{"params": [{"name": "grid", "select": "interval", "bind": "scales"}], "mark": "line"}, {"transform": [{"filter": {"param": "hover", "empty": false}}], "mark": "point"}], "encoding": {"y": {"field": "val_loss", "type": "quantitative", "title": "val_loss", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}}, "transform": [{"loess": "val_loss", "on": "step", "groupby": ["rev"], "bandwidth": {"signal": "smooth"}}]}, {"mark": {"type": "line", "opacity": 0.2}, "encoding": {"x": {"field": "step", "type": "quantitative", "title": "step"}, "y": {"field": "val_loss", "type": "quantitative", "title": "val_loss", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}}}, {"mark": {"type": "circle", "size": 10}, "encoding": {"x": {"aggregate": "max", "field": "step", "type": "quantitative", "title": "step"}, "y": {"aggregate": {"argmax": "step"}, "field": "val_loss", "type": "quantitative", "title": "val_loss", "scale": {"zero": false}}, "color": {"field": "rev", "type": "nominal"}}}, {"transform": [{"calculate": "datum.rev", "as": "pivot_field"}, {"pivot": "pivot_field", "op": "mean", "value": "val_loss", "groupby": ["step"]}], "mark": {"type": "rule", "tooltip": {"content": "data"}, "stroke": "grey"}, "encoding": {"opacity": {"condition": {"value": 0.3, "param": "hover", "empty": false}, "value": 0}}, "params": [{"name": "hover", "select": {"type": "point", "fields": ["step"], "nearest": true, "on": "mouseover", "clear": "mouseout"}}]}]};
             vegaEmbed('#dvclive_resnet18_plots_metrics_val_loss_tsv', spec);
         </script>
     </div>

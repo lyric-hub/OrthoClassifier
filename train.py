@@ -1,4 +1,4 @@
-from compositeimage.Classifier import Classifier
+from compositeimage import Classifier
 
 if __name__ == "__main__":
     classifier = Classifier()

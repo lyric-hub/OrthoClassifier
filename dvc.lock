@@ -3,32 +3,30 @@ stages:
   train:
     cmd: python train.py
     deps:
+    - path: data/Omini_DATA
+      hash: md5
+      md5: 9ffdeef41bf4acc52d1dbcd2fb1e4ba8.dir
+      size: 88467320
+      nfiles: 4116
+    - path: models/resnet18.pt
+      hash: md5
+      md5: e96da36c57aaf9eaf13ada1796388516
+      size: 44819388
     - path: params.yaml
       hash: md5
-      md5: d2e5a865c92f624667c37c94e827188d
-      size: 374
+      md5: 8d7cd8d84efdfe884546d95276dd7478
+      size: 386
     - path: train.py
       hash: md5
       md5: cd6cd51a97d73ed013e8e616c30aa338
       size: 141
     outs:
-    - path: dvclive/resnet18/metrics.json
+    - path: dvclive/resnet18
       hash: md5
-      md5: 5a0d14072f7d38bed6510ad8ebf89c47
-      size: 132
-    - path: dvclive/resnet18/plots/metrics/train_loss.tsv
+      md5: 9ee0bd89298a5b1f7495e020df70011e.dir
+      size: 1153
+      nfiles: 4
+    - path: models/fine_tuned_resnet18.pt
       hash: md5
-      md5: efc355284e4e2c8b916619bce57902e9
-      size: 123
-    - path: dvclive/resnet18/plots/metrics/val_accuracy.tsv
-      hash: md5
-      md5: e79af8153fbf3991a3fb4c3963b194d5
-      size: 120
-    - path: dvclive/resnet18/plots/metrics/val_loss.tsv
-      hash: md5
-      md5: 237439172aa6bd52b0ac2107dd1d2ecb
-      size: 121
-    - path: models/resnet18.pt
-      hash: md5
-      md5: 688fd4ab6879ef566297b77bf9ca93bf
-      size: 44820988
+      md5: d7dd42c161abedfd63efa80eb5f434d3
+      size: 44822374
