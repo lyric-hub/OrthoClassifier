@@ -33,8 +33,8 @@ packages = [
 
 
 [[tool.poetry.source]]
-name     = "pytorch-cu121"
-url      = "https://download.pytorch.org/whl/cu121"
+name = "pytorch-cu121"
+url = "https://download.pytorch.org/whl/cu121"
 priority = "explicit"
 
 
@@ -44,5 +44,5 @@ torch = {source = "pytorch-cu121"}
 torchvision = {source = "pytorch-cu121"}
 torchaudio = {source = "pytorch-cu121"}
 [build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
+requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
